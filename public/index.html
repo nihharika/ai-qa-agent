@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI QA Agent Test Form</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>Test Form</h1>
+      <p class="subtitle">
+        Gemini generates test scenarios. Playwright executes them automatically.
+      </p>
+
+      <form id="testForm" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            data-testid="name-input"
+            type="text"
+            placeholder="Name"
+            autocomplete="name"
+          />
+          <span class="error" data-error-for="name"></span>
+        </div>
+
+        <div class="field">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            name="username"
+            data-testid="username-input"
+            type="text"
+            placeholder="Username"
+            autocomplete="username"
+          />
+          <span class="error" data-error-for="username"></span>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            data-testid="email-input"
+            type="email"
+            placeholder="Email"
+            autocomplete="email"
+          />
+          <span class="error" data-error-for="email"></span>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input
+            id="phone"
+            name="phone"
+            data-testid="phone-input"
+            type="tel"
+            placeholder="Phone"
+            autocomplete="tel"
+          />
+          <span class="error" data-error-for="phone"></span>
+        </div>
+
+        <div class="field">
+          <label for="city">City</label>
+          <input
+            id="city"
+            name="city"
+            data-testid="city-input"
+            type="text"
+            placeholder="City"
+            autocomplete="address-level2"
+          />
+          <span class="error" data-error-for="city"></span>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            data-testid="message-input"
+            placeholder="Message"
+            rows="4"
+          ></textarea>
+          <span class="error" data-error-for="message"></span>
+        </div>
+
+        <button id="submitBtn" data-testid="submit" type="submit">
+          Submit
+        </button>
+      </form>
+
+      <div
+        id="formResult"
+        data-testid="form-result"
+        class="result"
+        hidden
+      ></div>
+
+      <hr />
+
+      <button
+        id="runAiTestsBtn"
+        data-testid="run-ai-tests"
+        type="button"
+      >
+        Run AI Tests
+      </button>
+
+      <div id="testLinks" class="links"></div>
+
+      <pre id="testOutput" data-testid="test-output">{}</pre>
+    </section>
+  </main>
+</body>
+</html>
